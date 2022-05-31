@@ -1,0 +1,4 @@
+#!/bin/sh
+# scrot -s --line mode=edge "$HOME/Pictures/Screenshot_%Y-%m-%d_%H.%M.%S.png" -e 'pngquant $f; xclip -selection clipboard -t image/png -i `echo $f | cut -d"." -f-3`-fs8.png'
+#!/bin/sh
+scrot -s "$HOME/Pictures/Screenshot_%Y-%m-%d_%H.%M.%S.png" -e 'pngquant $f; xclip -selection clipboard -t image/png -i `echo $f | cut -d"." -f-3`-fs8.png'
