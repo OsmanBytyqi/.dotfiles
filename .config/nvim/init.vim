@@ -13,7 +13,8 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'lukesmithxyz/vimling'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
@@ -30,9 +31,9 @@ lua require('comp')
 
 set title
 colorscheme gruvbox-baby
-"set bg=light
+set bg=light
 set go=a
-set bg=dark
+"set bg=dark
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
@@ -87,6 +88,7 @@ set noshowcmd
 
 " Replace ex mode with gq
 		" inoremap jj <Esc>
+
 " Check file in shellcheck:
 	map <leader>s :!clear && shellcheck -x %<CR>
 
@@ -103,6 +105,9 @@ set noshowcmd
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
 
+"Move visually sleceted lines up or down
+	vnoremap K :m '<-2'<CR>gv=gv
+	vnoremap J :m '<+1'<CR>gv=gv
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
@@ -160,13 +165,19 @@ function! ToggleHiddenAll()
     endif
 endfunction
 nnoremap <leader>h :call ToggleHiddenAll()<CR>
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
 
-hi Normal guibg=none
-let g:user_emmet_leader_key=','
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-source ~/.config/nvim/latex.vim
-au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+" ale sings for error and warning
+	let g:ale_sign_error = '❌'
+	let g:ale_sign_warning = '⚠️'
+
+	hi Normal guibg=none
+	let g:user_emmet_leader_key=','
+	let g:user_emmet_install_global = 0
+	autocmd FileType html,css EmmetInstall
+
+
+	source ~/.config/nvim/latex.vim
+
+" Replecase Ecs with Caps_Lock
+	au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+	au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
