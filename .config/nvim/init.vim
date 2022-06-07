@@ -107,7 +107,7 @@ set noshowcmd
 
 "Move visually sleceted lines up or down
 	vnoremap K :m '<-2'<CR>gv=gv
-	vnoremap J :m '<+1'<CR>gv=gv
+	vnoremap J :m '>+1'<CR>gv=gv
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
@@ -178,6 +178,6 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 
 	source ~/.config/nvim/latex.vim
 
-" Replecase Ecs with Caps_Lock
+" Replace Ecs with Caps_Lock
 	au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 	au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
