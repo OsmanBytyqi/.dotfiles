@@ -1,4 +1,4 @@
-let mapleader =","
+	let mapleader =","
 
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -22,6 +22,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'dense-analysis/ale'
 Plug 'luisiacc/gruvbox-baby'
 Plug 'mattn/emmet-vim'
+Plug 'sbdchd/neoformat'
 call plug#end()
 
 lua require ('plugins')
@@ -31,9 +32,9 @@ lua require('comp')
 
 set title
 colorscheme gruvbox-baby
-set bg=light
+" set bg=light
 set go=a
-"set bg=dark
+set bg=dark
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
@@ -105,7 +106,10 @@ set noshowcmd
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
 
-"Move visually sleceted lines up or down
+" Delete current selection and send it in void reg
+	vnoremap <leader>p "_dP
+
+" Move visually sleceted lines up or down
 	vnoremap K :m '<-2'<CR>gv=gv
 	vnoremap J :m '>+1'<CR>gv=gv
 
@@ -174,7 +178,6 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 	let g:user_emmet_leader_key=','
 	let g:user_emmet_install_global = 0
 	autocmd FileType html,css EmmetInstall
-
 
 	source ~/.config/nvim/latex.vim
 
