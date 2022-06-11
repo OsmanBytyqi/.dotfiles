@@ -23,6 +23,8 @@ Plug 'dense-analysis/ale'
 Plug 'luisiacc/gruvbox-baby'
 Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 lua require ('plugins')
@@ -170,7 +172,7 @@ function! ToggleHiddenAll()
 endfunction
 nnoremap <leader>h :call ToggleHiddenAll()<CR>
 
-" ale sings for error and warning
+" ale sings for errors and warnings
 	let g:ale_sign_error = '❌'
 	let g:ale_sign_warning = '⚠️'
 
@@ -181,6 +183,15 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 
 	source ~/.config/nvim/latex.vim
 
-" Replace Ecs with Caps_Lock
+" Replace Esc with Caps_Lock
 	au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 	au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
+" Find files using Telescope command-line sugar.
+	nnoremap <leader>ff <cmd>Telescope find_files<cr>
+	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+	nnoremap <leader>fb <cmd>Telescope buffers<cr>
+	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" set colors for visual modes
+        hi Visual term=reverse cterm=reverse guibg=Grey
