@@ -195,3 +195,10 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 
 " set colors for visual modes
         hi Visual term=reverse cterm=reverse guibg=Grey
+	
+"set a specific line number  color
+         set cursorline
+  	 hi CursorLineNr guifg=orange
+	 hi LineNr guifg=grey
+ 	 hi CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE
+
