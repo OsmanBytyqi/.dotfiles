@@ -34,7 +34,7 @@ lua require('comp')
 
 set title
 colorscheme gruvbox-baby
-" set bg=light
+"set bg=light
 set go=a
 set bg=dark
 set mouse=a
@@ -44,6 +44,8 @@ set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
+set colorcolumn=120
+set signcolumn=yes
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
@@ -93,17 +95,17 @@ set noshowcmd
 		" inoremap jj <Esc>
 
 " Check file in shellcheck:
-	map <leader>s :!clear && shellcheck -x %<CR>
+	" map <leader>s :!clear && shellcheck -x %<CR>
 
 " Open my bibliography file in split
-	map <leader>b :vsp<space>$BIB<CR>
-	map <leader>r :vsp<space>$REFER<CR>
-
-"Toggle autocompiler
-	map <leader>a :!setsid autocomp % &<CR>
+	" map <leader>b :vsp<space>$BIB<CR>
+	" map <leader>r :vsp<space>$REFER<CR>
 
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
+
+"Toggle autocompiler
+	map <leader>a :!setsid autocomp % &<CR>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
 	map <leader>c :w! \| !compiler "<c-r>%"<CR>
