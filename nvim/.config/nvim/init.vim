@@ -19,7 +19,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'luisiacc/gruvbox-baby'
 Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
@@ -34,7 +34,7 @@ lua require('comp')
 
 set title
 colorscheme gruvbox-baby
-"set bg=light
+" set bg=light
 set go=a
 set bg=dark
 set mouse=a
@@ -45,7 +45,7 @@ set noruler
 set laststatus=0
 set noshowcmd
 set colorcolumn=120
-set signcolumn=yes
+" set signcolumn=yes
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
