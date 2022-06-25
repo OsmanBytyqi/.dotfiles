@@ -50,6 +50,9 @@ cmd open ${{
 
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
+
+cmd cp $cp ~/Documents/Latex/template.tex ~/Documents/Latex/"$(echo $* | tr ' ' '\ ')"
+
 cmd extract ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -103,6 +106,7 @@ map E extract
 map C copyto
 map M moveto
 map <c-n> push :mkdir<space>
+map <c-l> push :cp<space>
 map <c-r> reload
 map <c-s> set hidden!
 map <enter> shell
@@ -126,6 +130,6 @@ map V push :!nvim<space>
 map W $setsid -f $TERMINAL >/dev/null 2>&1
 
 map Y $printf "%s" "$fx" | xclip -selection clipboard
-
+# map n $cp ~/Documents/Latex/template.tex new.tex
 # Source Bookmarks
 # source "~/.config/lf/shortcutrc"
