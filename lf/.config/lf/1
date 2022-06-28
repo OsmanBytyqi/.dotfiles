@@ -51,7 +51,7 @@ cmd open ${{
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
 
-cmd cp $cp ~/Documents/Latex/template.tex ~/Documents/Latex/"$(echo $* | tr ' ' '\ ')" && nvim  "$(echo $* | tr ' ' '\ ')"
+cmd cp $cp ~/Documents/Latex/template.tex ~/Documents/Latex/"$(echo $* | tr ' ' '\ ')"
 
 cmd extract ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
