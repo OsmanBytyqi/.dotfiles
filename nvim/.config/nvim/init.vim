@@ -13,9 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'lukesmithxyz/vimling'
-" Plug 'vimwiki/vimwiki'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
@@ -25,18 +23,20 @@ Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'vimwiki/vimwiki'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 lua require ('plugins')
-lua require ('treesitter')
+" lua require ('treesitter')
 lua require('lsp')
 lua require('comp')
 
 set title
-colorscheme gruvbox-baby
-" set bg=light
+" colorscheme gruvbox-baby
+set bg=light
 set go=a
-set bg=dark
+" set bg=dark
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
@@ -44,7 +44,9 @@ set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
-set colorcolumn=120
+" set signcolumn=no
+hi! link SignColumn  Normal
+" set colorcolumn=120
 " set signcolumn=yes
 " Some basics:
 	nnoremap c "_c
@@ -98,7 +100,7 @@ set colorcolumn=120
 	" map <leader>s :!clear && shellcheck -x %<CR>
 
 " Open my bibliography file in split
-	" map <leader>b :vsp<space>$BIB<CR>
+	map <leader>b :vsp<space>$BIB<CR>
 	" map <leader>r :vsp<space>$REFER<CR>
 
 " Replace all is aliased to S.
@@ -178,8 +180,8 @@ endfunction
 nnoremap <leader>h :call ToggleHiddenAll()<CR>
 
 " ale sings for errors and warnings
-	let g:ale_sign_error = '❌'
-	let g:ale_sign_warning = '⚠️'
+	" let g:ale_sign_error = '❌'
+	" let g:ale_sign_warning = '⚠️'
 
 	hi Normal guibg=none
 	let g:user_emmet_leader_key=','
@@ -189,8 +191,8 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 	source ~/.config/nvim/latex.vim
 
 " Replace Esc with Caps_Lock
-	au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-	au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+	" au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+	" au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
 " Find files using Telescope command-line sugar.
 	nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -199,10 +201,10 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " set colors for visual modes
-        hi Visual term=reverse cterm=reverse guibg=Grey
+        " hi Visual term=reverse cterm=reverse guibg=grey
 
 "set a specific line number  color
-         set cursorline
-  	 hi CursorLineNr guifg=orange
-	 hi LineNr guifg=grey
- 	 hi CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE
+         " set cursorline
+  	 " hi CursorLineNr guifg=orange
+	 " hi LineNr guifg=grey
+ 	 " hi CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE
