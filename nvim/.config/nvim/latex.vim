@@ -9,7 +9,6 @@ autocmd Filetype tex noremap <F4> :!biber<Space><C-R>%<Backspace><Backspace><Bac
 autocmd Filetype tex noremap <F3> :w<cr>:!clear && pdflatex %<CR>
 autocmd Filetype tex inoremap ww <esc>/<++><enter>"_c4l
 autocmd Filetype tex inoremap ;s \section{}<Enter><Enter><++><Esc>2kf}i
-autocmd Filetype tex inoremap ;e \begin{exe}<Enter>\ex<Space><Enter>\end{exe}<Enter><Enter><++><Esc>3kA
 autocmd Filetype tex inoremap ;ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
 autocmd Filetype tex inoremap ;ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
 autocmd Filetype tex inoremap ;d \begin{document}<Enter><++><Enter>\end{document}<Esc>kI
