@@ -74,3 +74,6 @@ vim.g.completeopt="menu,menuone,noselect,noinsert"
 require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
+require'lspconfig'.clangd.setup {
+  capabilities = capabilities,
+}
