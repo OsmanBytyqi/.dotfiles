@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 function powermenu(){
 options="Cancel\nShutdown\nRestart\nSleep\nLock"
 selected=$(echo -e $options | dmenu)

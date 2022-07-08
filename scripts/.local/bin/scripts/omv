@@ -25,4 +25,4 @@ case "$1" in
 	down) down ;;
 esac >/dev/null
 
-pkill  -RTMIN+10 dmwblocks
+pkill  -RTMIN+10 dwmblocks
