@@ -5,7 +5,7 @@ NUM="${2:-5}"
 
 #PULSE=true
 
-if [ "$PULSE"=true ]; then
+if [ "$PULSE" = true ]; then
 	toggle() { pulsemixer --toggle-mute ;}
 	mute() { pulsemixer --mute ;}
 	up() { pulsemixer --change-volume +"$NUM"%+ ;}
