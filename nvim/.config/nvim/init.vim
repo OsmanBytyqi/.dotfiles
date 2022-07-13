@@ -18,6 +18,8 @@ Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'dense-analysis/ale'
+" Plug 'vim-conf-live/vimconflive2021-colorscheme' " or other package manager
+Plug 'gruvbox-community/gruvbox'
 Plug 'luisiacc/gruvbox-baby'
 Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
@@ -25,18 +27,20 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-airline/vim-airline'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 lua require ('plugins')
-" lua require ('treesitter')
+lua require ('treesitter')
 lua require('lsp')
 lua require('comp')
 
 set title
-" colorscheme gruvbox-baby
-set bg=light
+colorscheme gruvbox-baby
+colorscheme gruvbox
+" set bg=light
 set go=a
-" set bg=dark
+set bg=dark
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
@@ -62,7 +66,7 @@ hi! link SignColumn  Normal
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<CR>
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>f :Goyo \| set bg=dark \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
@@ -101,13 +105,14 @@ hi! link SignColumn  Normal
 
 " Open my bibliography file in split
 	map <leader>b :vsp<space>$BIB<CR>
-	" map <leader>r :vsp<space>$REFER<CR>
+	" map <leader>r :vsp<space>$REFER<CR
 
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
 
 "Toggle autocompiler
-	map <leader>a :!setsid autocomp % &<CR>
+	" map <leader>a :!setsid autocomp % &<CR>
+	" autocmd BufWritePost *.tex !compiler %
 
 " Compile document, be it groff/LaTeX/markdown/etc.
 	map <leader>c :w! \| !compiler "<c-r>%"<CR>
@@ -122,7 +127,7 @@ hi! link SignColumn  Normal
 	vnoremap K :m '<-2'<CR>gv=gv
 	vnoremap J :m '>+1'<CR>gv=gv
 
-" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+" Runs a script t hat cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
 
 " Ensure files are read as what I want:
@@ -138,7 +143,7 @@ hi! link SignColumn  Normal
 
 " Enable Goyo by default for mutt writing
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
+	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=dark
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
@@ -201,10 +206,10 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " set colors for visual modes
-        " hi Visual term=reverse cterm=reverse guibg=grey
+        hi Visual term=reverse cterm=reverse guibg=grey
 
 "set a specific line number  color
          " set cursorline
   	 " hi CursorLineNr guifg=orange
-	 " hi LineNr guifg=grey
+	 " hi LineNr guifg=orange
  	 " hi CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE
