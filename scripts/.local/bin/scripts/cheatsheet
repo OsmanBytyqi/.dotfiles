@@ -1,0 +1,12 @@
+#!/bin/sh
+
+languagues=$(echo -n "golang tex c cpp typescript rust python javascript" | tr " " "\n")
+core_utils=$(echo "find xargs sed awk" | tr " " "\n")
+selected=$( echo "$languagues\n$core_utils" | fzf )
+read -p " gimme your query " query
+
+if echo "$languagues" | grep -qs $selected; then
+	curl cht.sh/$selected/$(echo "$query" | tr " " "+")
+else
+	curl cht.sh/$selected~$query
+fi
