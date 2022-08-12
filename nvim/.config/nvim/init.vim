@@ -18,16 +18,17 @@ Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'dense-analysis/ale'
-" Plug 'vim-conf-live/vimconflive2021-colorscheme' " or other package manager
+Plug 'vim-conf-live/vimconflive2021-colorscheme' " or other package manager
 Plug 'gruvbox-community/gruvbox'
 Plug 'luisiacc/gruvbox-baby'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'sbdchd/neoformat'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 lua require ('plugins')
@@ -36,6 +37,16 @@ lua require('lsp')
 lua require('comp')
 
 set title
+set exrc
+set guicursor=
+set noerrorbells
+set smartcase
+set incsearch
+set signcolumn=yes
+set completeopt=menuone,noinsert,noselect
+set cmdheight=2
+set colorcolumn=80
+
 colorscheme gruvbox-baby
 colorscheme gruvbox
 " set bg=light
@@ -48,10 +59,10 @@ set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
+set nowrap
 " set signcolumn=no
 hi! link SignColumn  Normal
-" set colorcolumn=120
-" set signcolumn=yes
+set colorcolumn=120
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
@@ -59,6 +70,7 @@ hi! link SignColumn  Normal
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
+
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
@@ -113,6 +125,7 @@ hi! link SignColumn  Normal
 "Toggle autocompiler
 	" map <leader>a :!setsid autocomp % &<CR>
 	" autocmd BufWritePost *.tex !compiler %
+	map <leader>l :!st -e cheatsheet<CR>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
 	map <leader>c :w! \| !compiler "<c-r>%"<CR>
@@ -143,6 +156,7 @@ hi! link SignColumn  Normal
 
 " Enable Goyo by default for mutt writing
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+	" autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=dark
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
@@ -188,28 +202,25 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 	" let g:ale_sign_error = '❌'
 	" let g:ale_sign_warning = '⚠️'
 
-	hi Normal guibg=none
-	let g:user_emmet_leader_key=','
-	let g:user_emmet_install_global = 0
-	autocmd FileType html,css EmmetInstall
+" set transparent background
+        hi Normal guibg=NONE ctermbg=NONE
+	" let g:user_emmet_leader_key=','
+	" let g:user_emmet_install_global = 0
+	" autocmd FileType html,css EmmetInstall
 
 	source ~/.config/nvim/latex.vim
 
 " Replace Esc with Caps_Lock
 	" au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 	" au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
-
 " Find files using Telescope command-line sugar.
 	nnoremap <leader>ff <cmd>Telescope find_files<cr>
 	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 	nnoremap <leader>fb <cmd>Telescope buffers<cr>
 	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+	nnoremap <leader>e <cmd>Ex<cr>
 
-" set colors for visual modes
-        hi Visual term=reverse cterm=reverse guibg=grey
-
-"set a specific line number  color
-         " set cursorline
-  	 " hi CursorLineNr guifg=orange
-	 " hi LineNr guifg=orange
- 	 " hi CursorLine cterm=underline term=underline ctermbg=NONE guibg=NONE
+" set color for cursor-line-number
+	set cursorline
+	set cursorlineopt=number
+	autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
