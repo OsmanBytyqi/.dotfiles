@@ -38,18 +38,12 @@ lua require('comp')
 
 set title
 set exrc
-set guicursor=
-set noerrorbells
-set smartcase
-set incsearch
-set signcolumn=yes
-set completeopt=menuone,noinsert,noselect
-set cmdheight=2
-set colorcolumn=80
+" set signcolumn=yes
 
 colorscheme gruvbox-baby
 colorscheme gruvbox
-" set bg=light
+set incsearch
+set guicursor=
 set go=a
 set bg=dark
 set mouse=a
@@ -60,11 +54,14 @@ set noruler
 set laststatus=0
 set noshowcmd
 set nowrap
-" set signcolumn=no
-hi! link SignColumn  Normal
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
 set colorcolumn=120
+
 " Some basics:
-	nnoremap c "_c
+	" nnoremap c "_c
 	set nocompatible
 	filetype plugin on
 	syntax on
@@ -109,9 +106,6 @@ set colorcolumn=120
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
-" Replace ex mode with gq
-		" inoremap jj <Esc>
-
 " Check file in shellcheck:
 	" map <leader>s :!clear && shellcheck -x %<CR>
 
@@ -121,11 +115,6 @@ set colorcolumn=120
 
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
-
-"Toggle autocompiler
-	" map <leader>a :!setsid autocomp % &<CR>
-	" autocmd BufWritePost *.tex !compiler %
-	map <leader>l :!st -e cheatsheet<CR>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
 	map <leader>c :w! \| !compiler "<c-r>%"<CR>
@@ -213,6 +202,7 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 " Replace Esc with Caps_Lock
 	" au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 	" au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
 " Find files using Telescope command-line sugar.
 	nnoremap <leader>ff <cmd>Telescope find_files<cr>
 	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
