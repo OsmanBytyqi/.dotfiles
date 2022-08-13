@@ -59,7 +59,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set colorcolumn=120
-
+set scrolloff=8
 " Some basics:
 	" nnoremap c "_c
 	set nocompatible
