@@ -21,5 +21,6 @@ nnoremap("<leader>c","<cmd>w<CR><cmd>! compiler %<CR>")
 -- open open corresponding .pdf/.html or preview
 nnoremap("<leader>p","<cmd>!opout %<CR><CR>")
 
+-- Replace all is aliased to S.
 nnoremap("S",":%s//g<Left><Left>")
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
