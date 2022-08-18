@@ -9,7 +9,7 @@ endif
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 
 Plug 'tpope/vim-surround'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'lukesmithxyz/vimling'
@@ -38,7 +38,7 @@ lua require('comp')
 
 set title
 set exrc
-" set signcolumn=yes
+set signcolumn=no
 
 colorscheme gruvbox-baby
 colorscheme gruvbox
@@ -58,7 +58,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set colorcolumn=120
+set colorcolumn=100
 set scrolloff=8
 " Some basics:
 	" nnoremap c "_c
@@ -67,7 +67,6 @@ set scrolloff=8
 	syntax on
 	set encoding=utf-8
 	set number relativenumber
-
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
@@ -80,16 +79,19 @@ set scrolloff=8
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
+"netrw
+    map <leader>n :Ex<CR>
 
 " Nerd tree
-	map <leader>n :NERDTreeToggle<CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    if has('nvim')
-        let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
-    else
-        let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
-    endif
+	" map <leader>n :NERDTreeToggle<CR>
+	" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " if has('nvim')
+        " let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
+    " else
+        " let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
+    " endif
     "no  backup file
+
 	set nobackup       "no bafiles
 	set nowritebackup  "only in case you don't wa bfile while editing
 	set noswapfile
@@ -214,3 +216,9 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 	set cursorline
 	set cursorlineopt=number
 	autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
+
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
