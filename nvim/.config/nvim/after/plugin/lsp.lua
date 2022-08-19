@@ -112,6 +112,7 @@ require("lspconfig").tsserver.setup(config())
 require("lspconfig").html.setup(config())
 
 require("lspconfig").ccls.setup(config())
+require("lspconfig").clangd.setup(config())
 
 require("lspconfig").pyright.setup(config())
 

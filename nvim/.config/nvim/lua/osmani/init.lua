@@ -28,11 +28,22 @@ autocmd({"BufEnter", "BufWinEnter", "TabEnter"}, {
     end
 })
 
+autocmd('VimLeave', {
+    pattern = "*.tex",
+    command = "!texclear %"
+})
+
+autocmd({"BufWritePre"},{
+    pattern=".Xresources",
+    command="!xrdb %"
+})
+
 autocmd({"BufWritePre"}, {
     group =Osmani,
     pattern = "*",
     command = "%s/\\s\\+$//e",
 })
+
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
