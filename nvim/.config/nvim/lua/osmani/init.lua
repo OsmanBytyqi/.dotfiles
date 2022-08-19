@@ -33,6 +33,24 @@ autocmd('VimLeave', {
     command = "!texclear %"
 })
 
+autocmd({"BufRead","BufNewFile"},{
+        pattern ="*.tex",
+        command ="set filetype=tex"
+})
+
+
+autocmd({"BufRead","BufNewFile"},{
+        pattern ="*.md",
+        command ="set filetype=markdown"
+})
+
+
+autocmd({"BufRead","BufNewFile"},{
+        pattern ="*.ms,*.me,*.man,*.mom",
+        command ="set filetype=groff"
+})
+
+
 autocmd({"BufWritePre"},{
     pattern=".Xresources",
     command="!xrdb %"
