@@ -52,8 +52,9 @@ autocmd({"BufRead","BufNewFile"},{
 
 
 autocmd({"BufWritePre"},{
-    pattern=".Xresources",
+    pattern="*.Xresources",
     command="!xrdb %"
+
 })
 
 autocmd({"BufWritePre"}, {
