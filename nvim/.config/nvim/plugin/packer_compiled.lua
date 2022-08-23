@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -129,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -148,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/romgrk/nvim-treesitter-context"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["packer.nvim"] = {
     loaded = true,

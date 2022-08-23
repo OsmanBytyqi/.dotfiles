@@ -5,12 +5,12 @@ return require("packer").startup(function()
     -- Simple plugins can be specified as strings
     use("TimUntersberger/neogit")
 
-    -- TJ created lodash of neovim
+    ---- TJ created lodash of neovim
     use("nvim-lua/plenary.nvim")
     use("nvim-lua/popup.nvim")
     use("nvim-telescope/telescope.nvim")
 
-    -- All the things
+    ---- All the things
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
@@ -24,14 +24,17 @@ return require("packer").startup(function()
     use("saadparwaiz1/cmp_luasnip")
     use("tpope/vim-surround")
     use("tpope/vim-commentary")
-    use("jiangmiao/auto-pairs")
+    use("windwp/nvim-autopairs")
 
-    -- Primeagen doesn"t create lodash
-    --use("ThePrimeagen/git-worktree.nvim")
-    --use("ThePrimeagen/harpoon")
+    ---- Primeagen doesn"t create lodash
+    ----use("ThePrimeagen/git-worktree.nvim")
+    ----use("ThePrimeagen/harpoon")
     use("mbbill/undotree")
 
-    -- Colorscheme section
+    ---autoclose tag
+    use("windwp/nvim-ts-autotag")
+
+    ---- Colorscheme section
     use("gruvbox-community/gruvbox")
     use("folke/tokyonight.nvim")
 
