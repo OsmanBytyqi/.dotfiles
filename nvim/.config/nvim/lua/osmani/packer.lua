@@ -1,9 +1,7 @@
 return require("packer").startup(function()
     use("wbthomason/packer.nvim")
-    use("sbdchd/neoformat")
+    -- use("sbdchd/neoformat")
 
-    -- Simple plugins can be specified as strings
-    use("TimUntersberger/neogit")
 
     ---- TJ created lodash of neovim
     use("nvim-lua/plenary.nvim")
@@ -24,15 +22,12 @@ return require("packer").startup(function()
     use("saadparwaiz1/cmp_luasnip")
     use("tpope/vim-surround")
     use("tpope/vim-commentary")
-    use("windwp/nvim-autopairs")
 
-    ---- Primeagen doesn"t create lodash
-    ----use("ThePrimeagen/git-worktree.nvim")
-    ----use("ThePrimeagen/harpoon")
     use("mbbill/undotree")
 
     ---autoclose tag
-    use("windwp/nvim-ts-autotag")
+    -- use("windwp/nvim-ts-autotag")
+    -- use("windwp/nvim-autopairs")
 
     ---- Colorscheme section
     use("gruvbox-community/gruvbox")
