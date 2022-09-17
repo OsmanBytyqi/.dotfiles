@@ -28,7 +28,6 @@ return require("packer").startup(function()
     ---autoclose tag
     -- use("windwp/nvim-ts-autotag")
     -- use("windwp/nvim-autopairs")
-
     ---- Colorscheme section
     use("gruvbox-community/gruvbox")
     use("folke/tokyonight.nvim")
