@@ -1,5 +1,5 @@
--- vim.g.osmani_colorscheme = "gruvbox"
-vim.g.osmani_colorscheme = "tokyonight"
+vim.g.osmani_colorscheme = "gruvbox"
+-- vim.g.osmani_colorscheme = "tokyonight"
 
 function ColorMyPencils()
     vim.g.gruvbox_contrast_dark = 'hard'

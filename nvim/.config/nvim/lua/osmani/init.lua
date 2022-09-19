@@ -58,7 +58,7 @@ autocmd({"BufWritePre"},{
 })
 
 autocmd({"BufWritePre"}, {
-    group =Osmani,
+    group = Osmani,
     pattern = "*",
     command = "%s/\\s\\+$//e",
 })
