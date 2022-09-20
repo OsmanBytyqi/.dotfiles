@@ -25,4 +25,5 @@ nnoremap("<leader>p","<cmd>!opout %<CR><CR>")
 nnoremap("<leader>s",":%s//g<Left><Left>")
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-
+nnoremap("<C-k>", "<cmd>cnext<CR>zz")
+nnoremap("<C-j>", "<cmd>cprev<CR>zz")
