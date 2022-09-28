@@ -3,6 +3,7 @@
     follow = keyboard
     width = 370
     height = 350
+    height = 350
     offset = 0x19
     padding = 2
     horizontal_padding = 2
@@ -17,7 +18,7 @@
 
 [urgency_normal]
     foreground = "#ebdbb2"
-    background = "#458588"
+    background = "#1cc24d"
     timeout = 5
 
 [urgency_critical]
