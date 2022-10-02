@@ -1,0 +1,43 @@
+#!/bin/sh
+
+cat << EOF
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{textcomp}
+\usepackage{float}
+%\usepackage[albanian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\usepackage{setspace}
+\onehalfspacing
+% \usepackage[backend=biber]{biblatex}
+% \addbibresource{uni.bib}
+
+\title{}
+\author{Osman Bytyqi}
+\date{}
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+
+\end{abstract}
+
+%\printbibliography
+\end{document}
+EOF
