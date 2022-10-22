@@ -27,3 +27,4 @@ nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 nnoremap("<C-k>", "<cmd>cnext<CR>zz")
 nnoremap("<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>h", toggle_status)

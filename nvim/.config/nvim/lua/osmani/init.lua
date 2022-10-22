@@ -65,6 +65,14 @@ autocmd({"BufWritePre"}, {
 })
 
 
+function toggle_status()
+  if vim.opt.laststatus._value == 0 then
+    vim.opt.laststatus = 2
+  else
+    vim.opt.laststatus = 0
+  end
+end
+
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
