@@ -35,8 +35,8 @@ autocmd('VimLeave', {
 
 autocmd({"BufRead","BufNewFile"},{
         pattern ="*.tex",
-        command ="set filetype=tex",
-        command ="TSToggle highlight"
+        command ="set filetype=tex"
+        -- command ="TSToggle highlight"
 })
 
 
