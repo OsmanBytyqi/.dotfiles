@@ -64,7 +64,7 @@ autocmd({"BufWritePre"}, {
     command = "%s/\\s\\+$//e",
 })
 
-
+vim.opt.laststatus = 0
 function toggle_status()
   if vim.opt.laststatus._value == 0 then
     vim.opt.laststatus = 2
