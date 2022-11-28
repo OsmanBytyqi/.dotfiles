@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# this script is going to take a screenshot of selected area and it will save to clipboard and to Pictures directory
+# this script is going to take a screenshot of selected area and it will save to clipboard and to the Pictures directory
 
 output="$(date '+%y%m%d-%H%M-%S').png"
 maim --select | tee ~/Pictures/"$output" | xclip -selection clipboard -t image/png && notify-send -i "$HOME/Pictures/"$output"" "saved to your clipboard"
+
 
 
