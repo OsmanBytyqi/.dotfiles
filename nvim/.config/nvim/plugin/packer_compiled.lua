@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["goyo.vim"] = {
+    loaded = true,
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/goyo.vim",
+    url = "https://github.com/junegunn/goyo.vim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -193,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

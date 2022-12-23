@@ -45,17 +45,21 @@ autocmd({"BufRead","BufNewFile"},{
         command ="set filetype=markdown"
 })
 
-
 autocmd({"BufRead","BufNewFile"},{
         pattern ="*.ms,*.me,*.man,*.mom",
         command ="set filetype=groff"
 })
 
 
-autocmd({"BufWritePre"},{
-    pattern="*.Xresources",
+autocmd({"BufWritePost"},{
+    pattern="xresources",
     command="!xrdb %"
 
+})
+
+autocmd({"BufWritePost"}, {
+    pattern="~/.local/src/dwmblocks/config.h ",
+    command = "!cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }"
 })
 
 autocmd({"BufWritePre"}, {
@@ -75,4 +79,5 @@ end
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
+
 vim.g.netrw_winsize = 25

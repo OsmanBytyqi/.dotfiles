@@ -22,6 +22,7 @@ return require("packer").startup(function()
     use("saadparwaiz1/cmp_luasnip")
     use("tpope/vim-surround")
     use("tpope/vim-commentary")
+    use("junegunn/goyo.vim")
 
     use("mbbill/undotree")
 
@@ -33,15 +34,16 @@ return require("packer").startup(function()
     use("folke/tokyonight.nvim")
 
 
-    use({
-        "nvim-treesitter/nvim-treesitter",
-    commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0"
-    })
-
-    -- use("nvim-treesitter/nvim-treesitter", {
-    --     run = ":TSUpdate"
+    -- use({
+    --     "nvim-treesitter/nvim-treesitter",
+    -- commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0"
     -- })
 
+    use("nvim-treesitter/nvim-treesitter", {
+        run = ":TSUpdate"
+    })
+
+    use("folke/zen-mode.nvim")
     use("nvim-treesitter/playground")
     use("romgrk/nvim-treesitter-context")
 
