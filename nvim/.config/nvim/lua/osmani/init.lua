@@ -33,10 +33,9 @@ autocmd('VimLeave', {
     command = "!texclear %"
 })
 
-autocmd({"BufRead","BufNewFile"},{
+autocmd({"BufRead","BufNewFile","VimLeave"},{
         pattern ="*.tex",
         command ="set filetype=tex"
-        -- command ="TSToggle highlight"
 })
 
 
@@ -46,20 +45,25 @@ autocmd({"BufRead","BufNewFile"},{
 })
 
 autocmd({"BufRead","BufNewFile"},{
+        pattern =".diff",
+        command ="TSToggle highlight"
+})
+
+
+autocmd({"BufRead","BufNewFile"},{
         pattern ="*.ms,*.me,*.man,*.mom",
         command ="set filetype=groff"
 })
 
+autocmd({"BufRead", "BufNewFile"},{
+    pattern="xresources",
+    command="set filetype=xdefaults"
+})
 
 autocmd({"BufWritePost"},{
     pattern="xresources",
-    command="!xrdb %"
+    command="!xrdb %",
 
-})
-
-autocmd({"BufWritePost"}, {
-    pattern="~/.local/src/dwmblocks/config.h ",
-    command = "!cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }"
 })
 
 autocmd({"BufWritePre"}, {
@@ -70,11 +74,11 @@ autocmd({"BufWritePre"}, {
 
 vim.opt.laststatus = 0
 function toggle_status()
-  if vim.opt.laststatus._value == 0 then
-    vim.opt.laststatus = 2
-  else
-    vim.opt.laststatus = 0
-  end
+    if vim.opt.laststatus._value == 0 then
+        vim.opt.laststatus = 2
+    else
+        vim.opt.laststatus = 0
+    end
 end
 
 vim.g.netrw_browse_split = 0
