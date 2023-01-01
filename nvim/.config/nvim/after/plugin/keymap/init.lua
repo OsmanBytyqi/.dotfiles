@@ -18,7 +18,7 @@ nnoremap ("<leader>b","<cmd> :vsp<space>$BIB<CR>")
 --Compile document, be it groff/LaTeX/markdown/etc.
 nnoremap("<leader>c","<cmd>w<CR><cmd>! compiler %<CR>")
 
--- open open corresponding .pdf/.html or preview
+-- open corresponding .pdf/.html or preview
 nnoremap("<leader>p","<cmd>!opout %<CR><CR>")
 
 -- Replace all is aliased to S.
