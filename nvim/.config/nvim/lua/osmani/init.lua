@@ -48,8 +48,6 @@ autocmd({"BufRead","BufNewFile"},{
         pattern =".diff",
         command ="TSToggle highlight"
 })
-
-
 autocmd({"BufRead","BufNewFile"},{
         pattern ="*.ms,*.me,*.man,*.mom",
         command ="set filetype=groff"
@@ -65,6 +63,11 @@ autocmd({"BufWritePost"},{
     command="!xrdb %",
 
 })
+autocmd({"BufRead", "BufNewFile"},{
+    pattern=".diff",
+    command="TSToggle highlight"
+})
+
 
 autocmd({"BufWritePre"}, {
     group = Osmani,

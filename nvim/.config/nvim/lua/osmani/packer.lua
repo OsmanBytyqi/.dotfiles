@@ -23,7 +23,7 @@ return require("packer").startup(function()
     use("tpope/vim-surround")
     use("tpope/vim-commentary")
     use("junegunn/goyo.vim")
-
+    use ("eandrju/cellular-automaton.nvim")
     use("mbbill/undotree")
 
     ---autoclose tag
