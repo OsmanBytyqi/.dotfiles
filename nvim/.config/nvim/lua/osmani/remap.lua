@@ -6,7 +6,6 @@ vim.keymap.set("v","K", ":m '<-2<CR>gv=gv")
 
 
 ---Open my bibliography file in split
--- nnoremap ("<leader>b","<cmd> :vsp<space>$BIB<CR>")
 vim.keymap.set("n", "<leader>b","<cmd> :vsp<space>$BIB<CR>" )
 
 --Compile document, be it groff/LaTeX/markdown/etc.
@@ -21,13 +20,13 @@ vim.keymap.set("n","<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n","<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n","<C-j>", "<cmd>cprev<CR>zz")
---
 
+vim.opt.laststatus = 0
 vim.keymap.set("n", "<leader>h", function()
-        if vim.opt.laststatus._value == 0 then
-            vim.opt.laststatus = 2
-        else
-            vim.opt.laststatus = 0
-        end
+    if vim.opt.laststatus._value == 0 then
+        vim.opt.laststatus = 2
+    else
+        vim.opt.laststatus = 0
+    end
 end)
 

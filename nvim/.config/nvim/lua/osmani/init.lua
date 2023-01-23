@@ -36,16 +36,6 @@ autocmd({"BufRead","BufNewFile","VimLeave"},{
         command ="set filetype=tex"
 })
 
-
-autocmd({"BufRead","BufNewFile"},{
-        pattern ="*.md",
-        command ="set filetype=markdown"
-})
-
-autocmd({"BufRead","BufNewFile"},{
-        pattern =".diff",
-        command ="TSToggle highlight"
-})
 autocmd({"BufRead","BufNewFile"},{
         pattern ="*.ms,*.me,*.man,*.mom",
         command ="set filetype=groff"
@@ -61,11 +51,6 @@ autocmd({"BufWritePost"},{
     command="!xrdb %",
 
 })
-autocmd({"BufRead", "BufNewFile"},{
-    pattern=".diff",
-    command="TSToggle highlight"
-})
-
 
 autocmd({"BufWritePre"}, {
     group = Osmani,
@@ -74,6 +59,3 @@ autocmd({"BufWritePre"}, {
 })
 
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
