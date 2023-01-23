@@ -21,4 +21,13 @@ vim.keymap.set("n","<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n","<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n","<C-j>", "<cmd>cprev<CR>zz")
--- vim.keymap.set("n", "<leader>h", toggle_status)
+--
+
+vim.keymap.set("n", "<leader>h", function()
+        if vim.opt.laststatus._value == 0 then
+            vim.opt.laststatus = 2
+        else
+            vim.opt.laststatus = 0
+        end
+end)
+
