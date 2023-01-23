@@ -1,4 +1,5 @@
 vim.g.osmani_colorscheme = "gruvbox"
+-- vim.g.osmani_colorscheme = "catppuccin-mocha"
 -- vim.g.osmani_colorscheme = "tokyonight"
 
 function ColorMyPencils()
@@ -41,3 +42,5 @@ function ColorMyPencils()
 
 end
 ColorMyPencils()
+
+

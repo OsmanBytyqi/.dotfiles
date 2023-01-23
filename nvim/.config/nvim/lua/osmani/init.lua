@@ -1,7 +1,6 @@
 require("osmani.packer")
-require("osmani.keymap")
 require("osmani.set")
-require("osmani.statusline")
+require("osmani.remap")
 
 local augroup = vim.api.nvim_create_augroup
 Osmani = augroup('osmani', {})
@@ -75,16 +74,3 @@ autocmd({"BufWritePre"}, {
     command = "%s/\\s\\+$//e",
 })
 
-vim.opt.laststatus = 0
-function toggle_status()
-    if vim.opt.laststatus._value == 0 then
-        vim.opt.laststatus = 2
-    else
-        vim.opt.laststatus = 0
-    end
-end
-
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-
-vim.g.netrw_winsize = 25

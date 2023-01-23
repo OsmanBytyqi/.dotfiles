@@ -1,6 +1,6 @@
-local Remap = require("osmani.keymap")
-local nnoremap = Remap.nnoremap
-local inoremap = Remap.inoremap
+-- local Remap = require("osmani.keymap")
+-- local nnoremap = Remap.nnoremap
+-- local inoremap = Remap.inoremap
 
 -- local sumneko_root_path = "/home/osmani/.repos/lua-language-server"
 -- local sumneko_binary = sumneko_root_path .. "/usr/bin/lua-language-server"
@@ -91,19 +91,17 @@ local function config(_config)
 	return vim.tbl_deep_extend("force", {
 		capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 		on_attach = function()
-			nnoremap("gd", function() vim.lsp.buf.definition() end)
-			nnoremap("K", function() vim.lsp.buf.hover() end)
 
-            -- nnoremap("<leader>t",function() vim.lsp.buf.implementation() end)
-
-			nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-			nnoremap("<leader>vd", function() vim.diagnostic.open_float() end)
-			nnoremap("[d", function() vim.diagnostic.goto_next() end)
-			nnoremap("]d", function() vim.diagnostic.goto_prev() end)
-			nnoremap("<leader>vca", function() vim.lsp.buf.code_action() end)
-			nnoremap("<leader>vrr", function() vim.lsp.buf.references() end)
-			nnoremap("<leader>vrn", function() vim.lsp.buf.rename() end)
-			inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
+            vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+            vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+            vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+            vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+            vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+            vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+            vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+            vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+            vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+            vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 		end,
 	}, _config or {})
 end

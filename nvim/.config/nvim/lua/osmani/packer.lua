@@ -25,14 +25,28 @@ return require("packer").startup(function()
     use("junegunn/goyo.vim")
     use ("eandrju/cellular-automaton.nvim")
     use("mbbill/undotree")
-
+    use { "catppuccin/nvim", as = "catppuccin" }
     ---autoclose tag
     -- use("windwp/nvim-ts-autotag")
     use("windwp/nvim-autopairs")
     ---- Colorscheme section
-    use("gruvbox-community/gruvbox")
+    -- use("gruvbox-community/gruvbox")
     use("folke/tokyonight.nvim")
 
+    -- use({
+    --     'rose-pine/neovim',
+    --     as = 'rose-pine',
+    --     config = function()
+    --         vim.cmd('colorscheme rose-pine')
+    --     end
+    -- })
+    use({
+        'gruvbox-community/gruvbox',
+        as = 'gruvbox',
+        config = function()
+            vim.cmd('colorscheme gruvbox')
+        end
+    })
 
     -- use({
     --     "nvim-treesitter/nvim-treesitter",
