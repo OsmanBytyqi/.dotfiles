@@ -1,7 +1,3 @@
--- local Remap = require("osmani.keymap")
--- local nnoremap = Remap.nnoremap
--- local inoremap = Remap.inoremap
-
 -- local sumneko_root_path = "/home/osmani/.repos/lua-language-server"
 -- local sumneko_binary = sumneko_root_path .. "/usr/bin/lua-language-server"
 
@@ -78,14 +74,6 @@ cmp.setup({
 	},
 })
 
--- local tabnine = require("cmp_tabnine.config")
--- tabnine:setup({
--- 	max_lines = 1000,
--- 	max_num_results = 20,
--- 	sort = true,
--- 	run_on_every_keystroke = true,
--- 	snippet_placeholder = "..",
--- })
 
 local function config(_config)
 	return vim.tbl_deep_extend("force", {
