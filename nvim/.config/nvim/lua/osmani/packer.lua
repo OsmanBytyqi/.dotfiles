@@ -11,21 +11,20 @@ return require("packer").startup(function()
     use("hrsh7th/nvim-cmp")
     use("onsails/lspkind-nvim")
     use("nvim-lua/lsp_extensions.nvim")
-    use("glepnir/lspsaga.nvim")
     use("simrat39/symbols-outline.nvim")
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
     use("tpope/vim-commentary")
-    use ("eandrju/cellular-automaton.nvim")
-    use { "catppuccin/nvim", as = "catppuccin" }
     use("windwp/nvim-autopairs")
+
+    -- colorschemes
     use("gruvbox-community/gruvbox")
     use("folke/tokyonight.nvim")
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
-
     use("nvim-treesitter/playground")
     use("romgrk/nvim-treesitter-context")
 

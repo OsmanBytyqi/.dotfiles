@@ -1,5 +1,6 @@
 require("osmani.set")
 require("osmani.remap")
+require("osmani.packer")
 
 local augroup = vim.api.nvim_create_augroup
 Osmani = augroup('osmani', {})
@@ -57,5 +58,4 @@ autocmd({"BufWritePre"}, {
     pattern = "*",
     command = "%s/\\s\\+$//e",
 })
-
 
