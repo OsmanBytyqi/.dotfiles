@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
-  ["cellular-automaton.nvim"] = {
-    loaded = true,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
-    url = "https://github.com/eandrju/cellular-automaton.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -119,16 +114,6 @@ _G.packer_plugins = {
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
-  },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -153,12 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/romgrk/nvim-treesitter-context"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
