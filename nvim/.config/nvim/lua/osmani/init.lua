@@ -59,3 +59,9 @@ autocmd({"BufWritePre"}, {
     command = "%s/\\s\\+$//e",
 })
 
+
+function on_bufwritepost_dwmblocks_config()
+  vim.cmd("!cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }")
+end
+
+vim.cmd("autocmd BufWritePost ~/.local/src/dwmblocks/config.h lua on_bufwritepost_dwmblocks_config()")

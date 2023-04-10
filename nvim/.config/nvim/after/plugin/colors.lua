@@ -1,6 +1,7 @@
 vim.g.osmani_colorscheme = "gruvbox"
 -- vim.g.osmani_colorscheme = "catppuccin-mocha"
 -- vim.g.osmani_colorscheme = "tokyonight"
+-- vim.g.osmani_colorscheme = "gruvbox-material"
 
 function ColorMyPencils()
     vim.g.gruvbox_contrast_dark = 'hard'
@@ -17,6 +18,9 @@ function ColorMyPencils()
 
     hl("SignColumn", {
         bg = "none",
+    })
+    hl("background", {
+        bg = "#1f2528",
     })
 
     hl("ColorColumn", {
@@ -42,5 +46,8 @@ function ColorMyPencils()
 
 end
 ColorMyPencils()
+
+
+
 
 

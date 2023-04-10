@@ -106,6 +106,7 @@ require("lspconfig").clangd.setup(config())
 
 require("lspconfig").pyright.setup(config())
 
+require("lspconfig").astro.setup(config())
 
 require("lspconfig").cssls.setup(config())
 

@@ -4,6 +4,3 @@
 
 output="$(date '+%y%m%d-%H%M-%S').png"
 maim --select | tee ~/Pictures/"$output" | xclip -selection clipboard -t image/png && notify-send -i "$HOME/Pictures/"$output"" "saved to your clipboard"
-
-
-

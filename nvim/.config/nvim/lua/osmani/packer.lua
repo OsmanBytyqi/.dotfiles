@@ -2,8 +2,9 @@ return require("packer").startup(function()
     use("wbthomason/packer.nvim")
     use("nvim-lua/plenary.nvim")
     use("nvim-lua/popup.nvim")
-    use("nvim-telescope/telescope.nvim")
 
+    use("sainnhe/gruvbox-material")
+    use("nvim-telescope/telescope.nvim")
     ---- All the things
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
@@ -18,13 +19,14 @@ return require("packer").startup(function()
     use("windwp/nvim-autopairs")
 
     -- colorschemes
+    -- use("morhetz/gruvbox")
     use("gruvbox-community/gruvbox")
-    use("folke/tokyonight.nvim")
     use { "catppuccin/nvim", as = "catppuccin" }
 
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
+    use("github/copilot.vim")
     use("nvim-treesitter/playground")
     use("romgrk/nvim-treesitter-context")
 
