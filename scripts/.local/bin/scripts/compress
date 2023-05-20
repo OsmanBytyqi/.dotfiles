@@ -9,22 +9,24 @@
 file=$1
 output="${file%.*}.mp4"
 
-compres(){
+compress(){
   ffmpeg -i "$file" -c:v libx264 -c:a aac -crf 23 -preset medium output-"$output"
 }
 
 check(){
   case $1 in
-    *.mp4) compres ;;
-    *.mp3) compres ;;
-    *.mkv) compres ;;
-    *.avi) compres ;;
-    *.mov) compres ;;
-    *.flv) compres ;;
-    *.wmv) compres ;;
-    *.webm) compres ;;
+    *.mp4) compress & notify-send "compress has stared" ;;
+    *.mp3) compress & notify-send "compress has stared" ;;
+    *.mkv) compress & notify-send "compress has stared" ;;
+    *.avi) compress & notify-send "compress has stared" ;;
+    *.mov) compress & notify-send "compress has stared" ;;
+    *.flv) compress & notify-send "compress has stared" ;;
+    *.wmv) compress & notify-send "compress has stared" ;;
+    *.webm) compress & notify-send "compress has stared" ;;
     *) echo "not valid" ;;
   esac
 }
 
+
 check "$file"
+
