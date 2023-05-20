@@ -1,0 +1,30 @@
+#!/bin/sh
+
+## this script is for compressing videos and audios using ffmpeg
+## you can use it by typing compress filename.extension
+## it will create a new file with the same name but with output- prefix
+## it requires ffmpeg to be installed
+## you can change the output file name by changing the output- prefix to whatever you want
+
+file=$1
+output="${file%.*}.mp4"
+
+compres(){
+  ffmpeg -i "$file" -c:v libx264 -c:a aac -crf 23 -preset medium output-"$output"
+}
+
+check(){
+  case $1 in
+    *.mp4) compres ;;
+    *.mp3) compres ;;
+    *.mkv) compres ;;
+    *.avi) compres ;;
+    *.mov) compres ;;
+    *.flv) compres ;;
+    *.wmv) compres ;;
+    *.webm) compres ;;
+    *) echo "not valid" ;;
+  esac
+}
+
+check "$file"
