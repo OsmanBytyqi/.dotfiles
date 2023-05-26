@@ -18,7 +18,6 @@ autocmd('TextYankPost', {
         })
     end,
 })
-
 autocmd({"BufEnter", "BufWinEnter", "TabEnter"}, {
     group = Osmani,
     pattern = "*.rs",
@@ -26,40 +25,32 @@ autocmd({"BufEnter", "BufWinEnter", "TabEnter"}, {
         require("lsp_extensions").inlay_hints{}
     end
 })
-
 autocmd('VimLeave', {
     pattern = "*.tex",
     command = "!texclear %"
 })
-
 autocmd({"BufRead","BufNewFile","VimLeave"},{
         pattern ="*.tex",
         command ="set filetype=tex"
 })
-
 autocmd({"BufRead","BufNewFile"},{
         pattern ="*.ms,*.me,*.man,*.mom",
         command ="set filetype=groff"
 })
-
 autocmd({"BufRead", "BufNewFile"},{
     pattern="xresources",
     command="set filetype=xdefaults"
 })
-
 autocmd({"BufWritePost"},{
     pattern="xresources",
     command="!xrdb %",
 
 })
-
 autocmd({"BufWritePre"}, {
     group = Osmani,
     pattern = "*",
     command = "%s/\\s\\+$//e",
 })
-
-
 function on_bufwritepost_dwmblocks_config()
   vim.cmd("!cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }")
 end
