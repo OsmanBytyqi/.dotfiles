@@ -1,5 +1,6 @@
 vim.opt.guicursor = ""
 
+vim.o.mouse = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
