@@ -29,7 +29,6 @@ autocmd('VimLeave', {
     pattern = "*.tex",
     command = "!texclear %"
 })
-
 autocmd({"BufRead","BufNewFile","VimLeave"},{
         pattern ="*.tex",
         command ="set filetype=tex"
