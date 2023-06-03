@@ -29,14 +29,12 @@ autocmd('VimLeave', {
     pattern = "*.tex",
     command = "!texclear %"
 })
+
 autocmd({"BufRead","BufNewFile","VimLeave"},{
         pattern ="*.tex",
         command ="set filetype=tex"
 })
-autocmd({"BufRead","BufNewFile"},{
-        pattern ="*.ms,*.me,*.man,*.mom",
-        command ="set filetype=groff"
-})
+
 autocmd({"BufRead", "BufNewFile"},{
     pattern="xresources",
     command="set filetype=xdefaults"
