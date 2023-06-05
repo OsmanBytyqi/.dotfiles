@@ -1,13 +1,14 @@
 #!/bin/sh
 
-bookmark="$(xclip -o)"
-file="$HOME/.local/share/larbs/snippets"
+bookmark="$(xclip -o )"
+file=~/.local/share/larbs/snippets
 
-[ -z "$bookmark" ] && exit
+[[ -z "$bookmark" ]] && notify-send "No bookmark to add" && exit 1
 
-if grep -q "^$bookmark$" "$file"; then
-    notify-send "Opps." "Already bookmarked"
+if grep -q "^$bookmark$" "$file";
+then
+  notify-send "Bookmark already exists"
 else
-    notify-send "bookmark added!" "$bookmark is now saved to the file"
-    echo "$bookmark" >> $file
+  echo "$bookmark" >> "$file"
+  notify-send "Bookmark added"
 fi
