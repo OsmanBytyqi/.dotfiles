@@ -1,6 +1,3 @@
--- local sumneko_root_path = "/home/osmani/.repos/lua-language-server"
--- local sumneko_binary = sumneko_root_path .. "/usr/bin/lua-language-server"
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -30,8 +27,8 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-        --['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
@@ -94,72 +91,40 @@ local function config(_config)
 	}, _config or {})
 end
 
-require("lspconfig").zls.setup(config())
 
-require("lspconfig").tsserver.setup(config())
+local lspconfig = require("lspconfig")
+-- here you add the servers you want to start
+local servers = {
+  "tsserver",
+  "html",
+  "ccls",
+  "clangd",
+  "pyright",
+  "cssls",
+  "rust_analyzer"
+}
 
-require("lspconfig").html.setup(config())
+local config = {
+}
 
-require("lspconfig").ccls.setup(config())
+-- Add Rust Analyzer configuration to the `config` table
+config.rust_analyzer = {
+  cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+  -- Uncomment the following lines if you want to include additional settings
+  -- settings = {
+  --   rust = {
+  --     unstable_features = true,
+  --     build_on_save = false,
+  --     all_features = true,
+  --   },
+  -- },
+}
 
-require("lspconfig").clangd.setup(config())
+for _, server in ipairs(servers) do
+  lspconfig[server].setup(config)
+end
 
-require("lspconfig").pyright.setup(config())
 
-require("lspconfig").astro.setup(config())
-
-require("lspconfig").cssls.setup(config())
-
---require("lspconfig").gopls.setup(config({
---	cmd = { "gopls", "serve" },
---	settings = {
---		gopls = {
---			analyses = {
---				unusedparams = true,
---			},
---			staticcheck = true,
---		},
---	},
---}))
-
--- who even uses this?
-require("lspconfig").rust_analyzer.setup(config({
-	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
-	--[[
-    settings = {
-        rust = {
-            unstable_features = true,
-            build_on_save = false,
-            all_features = true,
-        },
-    }
-    --]]
-}))
-
--- require("lspconfig").sumneko_lua.setup(config({
--- 	cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
--- 	settings = {
--- 		Lua = {
--- 			runtime = {
--- 				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
--- 				version = "LuaJIT",
--- 				-- Setup your lua path
--- 				path = vim.split(package.path, ";"),
--- 			},
--- 			diagnostics = {
--- 				-- Get the language server to recognize the `vim` global
--- 				globals = { "vim" },
--- 			},
--- 			workspace = {
--- 				-- Make the server aware of Neovim runtime files
--- 				library = {
--- 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
--- 					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
--- 				},
--- 			},
--- 		},
--- 	},
--- }))
 
 local opts = {
 	-- whether to highlight the currently hovered symbol
