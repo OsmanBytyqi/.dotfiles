@@ -3,7 +3,6 @@ return require("packer").startup(function()
     use("nvim-lua/plenary.nvim")
     use("nvim-lua/popup.nvim")
 
-    use("sainnhe/gruvbox-material")
     use("nvim-telescope/telescope.nvim")
     ---- All the things
     use("neovim/nvim-lspconfig")
@@ -16,12 +15,11 @@ return require("packer").startup(function()
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
     use("tpope/vim-commentary")
-    use("windwp/nvim-autopairs")
 
     -- colorschemes
     -- use("morhetz/gruvbox")
     use("gruvbox-community/gruvbox")
-    use { "catppuccin/nvim", as = "catppuccin" }
+    -- use { "catppuccin/nvim", as = "catppuccin" }
 
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"

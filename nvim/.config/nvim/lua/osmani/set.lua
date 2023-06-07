@@ -35,6 +35,7 @@ vim.opt.cmdheight = 1
 -- delays and poor user experience.
 vim.opt.updatetime = 50
 
+
 -- Don't pass messages to |ins-completion-menu|.
 vim.opt.shortmess:append("c")
 

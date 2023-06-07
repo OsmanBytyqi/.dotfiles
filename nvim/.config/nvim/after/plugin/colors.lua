@@ -47,7 +47,3 @@ function ColorMyPencils()
 end
 ColorMyPencils()
 
-
-
-
-
