@@ -27,7 +27,7 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-        -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        --['<C-y>'] = cmp.mapping.confirm({ select = true }),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
@@ -92,38 +92,45 @@ local function config(_config)
 end
 
 
-local lspconfig = require("lspconfig")
--- here you add the servers you want to start
-local servers = {
-  "tsserver",
-  "html",
-  "ccls",
-  "clangd",
-  "pyright",
-  "cssls",
-  "rust_analyzer"
-}
+require("lspconfig").tsserver.setup(config())
 
-local config = {
-}
+require("lspconfig").html.setup(config())
 
--- Add Rust Analyzer configuration to the `config` table
-config.rust_analyzer = {
-  cmd = { "rustup", "run", "nightly", "rust-analyzer" },
-  -- Uncomment the following lines if you want to include additional settings
-  -- settings = {
-  --   rust = {
-  --     unstable_features = true,
-  --     build_on_save = false,
-  --     all_features = true,
-  --   },
-  -- },
-}
+require("lspconfig").ccls.setup(config())
 
-for _, server in ipairs(servers) do
-  lspconfig[server].setup(config)
-end
+require("lspconfig").clangd.setup(config())
 
+require("lspconfig").pyright.setup(config())
+
+require("lspconfig").astro.setup(config())
+
+require("lspconfig").cssls.setup(config())
+
+--require("lspconfig").gopls.setup(config({
+--	cmd = { "gopls", "serve" },
+--	settings = {
+--		gopls = {
+--			analyses = {
+--				unusedparams = true,
+--			},
+--			staticcheck = true,
+--		},
+--	},
+--}))
+
+-- who even uses this?
+require("lspconfig").rust_analyzer.setup(config({
+	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+	--[[
+    settings = {
+        rust = {
+            unstable_features = true,
+            build_on_save = false,
+            all_features = true,
+        },
+    }
+    --]]
+}))
 
 
 local opts = {
