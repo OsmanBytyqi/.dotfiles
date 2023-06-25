@@ -41,7 +41,7 @@ vim.opt.shortmess:append("c")
 
 vim.o.clipboard = "unnamedplus"
 
--- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 vim.g.netrw_localrmdir='rm -r'
