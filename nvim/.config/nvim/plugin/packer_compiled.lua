@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -99,20 +94,30 @@ _G.packer_plugins = {
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
-  ["lsp_extensions.nvim"] = {
+  ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim",
-    url = "https://github.com/nvim-lua/lsp_extensions.nvim"
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
-  ["lspkind-nvim"] = {
+  ["mason.nvim"] = {
     loaded = true,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
-    url = "https://github.com/onsails/lspkind-nvim"
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -153,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["symbols-outline.nvim"] = {
-    loaded = true,
-    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
-    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
