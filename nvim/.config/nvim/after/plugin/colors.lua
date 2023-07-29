@@ -1,4 +1,4 @@
-vim.g.osmani_colorscheme = "gruvbox"
+vim.g.osmani_colorscheme = "gruvbox-baby"
 -- vim.g.osmani_colorscheme = "catppuccin-mocha"
 -- vim.g.osmani_colorscheme = "tokyonight"
 -- vim.g.osmani_colorscheme = "gruvbox-material"

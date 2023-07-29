@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
+  ["gruvbox-baby"] = {
+    loaded = true,
+    path = "/home/osmani/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
+    url = "https://github.com/luisiacc/gruvbox-baby"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/osmani/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",

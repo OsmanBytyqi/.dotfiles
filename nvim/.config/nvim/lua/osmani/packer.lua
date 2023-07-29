@@ -1,6 +1,9 @@
 return require("packer").startup(function()
 
   use("wbthomason/packer.nvim")
+  use("luisiacc/gruvbox-baby")
+
+
   use("nvim-lua/plenary.nvim")
   use("nvim-lua/popup.nvim")
   use("folke/tokyonight.nvim")

@@ -85,15 +85,25 @@ cmp.setup {
     end,
   },
   mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete {},
-    ['<C-y>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
+    --['<C-n>'] = cmp.mapping.select_next_item(),
+    --['<C-p>'] = cmp.mapping.select_prev_item(),
+    --['<CR>'] = cmp.mapping.confirm({ select = true }),
+    --['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    --['<C-f>'] = cmp.mapping.scroll_docs(4),
+    --['<C-h>'] = cmp.mapping.complete {},
+    ---- ['<C-y>'] = cmp.mapping.confirm {
+    ----   behavior = cmp.ConfirmBehavior.Replace,
+    ----   select = true,
+    ---- },
+    ----
+    ----
+    ----
+    ----
+    ----
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -118,3 +128,7 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+
+
+
