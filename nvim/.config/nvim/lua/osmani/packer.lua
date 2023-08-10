@@ -1,14 +1,16 @@
 return require("packer").startup(function()
 
   use("wbthomason/packer.nvim")
+
+  -- all the color schemes
   use("luisiacc/gruvbox-baby")
+  use("folke/tokyonight.nvim")
+  use("gruvbox-community/gruvbox")
 
 
   use("nvim-lua/plenary.nvim")
   use("nvim-lua/popup.nvim")
-  use("folke/tokyonight.nvim")
   use("nvim-telescope/telescope.nvim")
-  use("gruvbox-community/gruvbox")
   use("tpope/vim-commentary")
   use("nvim-treesitter/nvim-treesitter", {
     run = ":TSUpdate"
