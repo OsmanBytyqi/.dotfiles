@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+black="#000000"
+favorite="#1f2528"
+purple="#000818"
+
+color="$(printf "%s \n"  $black $favorite $purple | dmenu)"
+
+# Substitute the background value with the selected color
+sed -i "1,10 s/background:.*/background:$color/" ~/.config/x11/xresources
+
+# Reload the updated xresources file
+xrdb  ~/.config/x11/xresources
